@@ -1,0 +1,41 @@
+footer{
+
+    .foot{
+        display: flex;
+        justify-content: space-between;
+       padding: 30px 0;
+        .foot_blog{
+            gap: 20px;
+            display: flex;
+            h3{
+                font-size: 14px;
+                color: #51545f;
+                line-height: 30px;
+                &:hover{
+                    color: brown;
+                }
+            }
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            li{
+                a{
+                    color: #51545f;
+                    &:hover{
+                        color: brown;
+                    }
+                }
+            }
+        }
+    }
+
+    p{
+        font-size: 14px;
+        color: #51545f;
+        line-height: 30px;
+    }
+ 
+}
