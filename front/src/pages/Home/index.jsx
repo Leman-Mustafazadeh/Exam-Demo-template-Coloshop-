@@ -1,21 +1,21 @@
 import React from 'react'
-import Spring from '../../components/Spring'
-import Genre from '../../components/Genre'
+import ContextShops from '../../context/ContextShops'
 import NewArrival from '../../components/NewArrival'
-import { ColorContext } from '../../context/ColorContextProvider'
+import Genre from '../../components/Genre'
+import Products from '../../components/Products'
 import BestSellers from '../../components/BestSellers'
-import LatestBlog from '../../components/LatestBlog'
-import Subscribe from '../../components/Subscribe'
+import Blogs from '../../components/Blogs'
+import Letter from '../../components/Letter'
 
 const Home = () => {
   return (
     <div>
-      <Spring/>
-      <Genre/>
       <NewArrival/>
+      <Genre/>
+      <Products/>
       <BestSellers/>
-      <LatestBlog/>
-      <Subscribe/>
+      <Blogs/>
+      <Letter/>
     </div>
   )
 }

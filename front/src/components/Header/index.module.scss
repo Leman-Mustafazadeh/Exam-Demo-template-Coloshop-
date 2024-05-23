@@ -1,52 +1,48 @@
-header{
-    display: flex;
-    align-items: center;
+header {
     padding: 20px 0;
-    .head{
-        color: black;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    .head {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         justify-content: space-between;
-        a{
-            text-decoration: none;
+        p{
             font-size: 24px;
-        color: #1e1e27;
-        font-weight: 700;
-        text-transform: uppercase;
+            color: rgb(30, 30, 39);
+            font-weight: 700;
+            text-transform: uppercase;
             span{
-               color: #fe4c50;
+                color: rgb(254, 76, 80);
             }
         }
-        ul{
+        ul {
             display: flex;
             align-items: center;
             gap: 20px;
-            li{
-                list-style: none;
-                padding: 0;
-                a{
-                    display: block;
-        color: #1e1e27;
-        font-size: 13px;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding: 20px;
+            list-style: none;
+
+            li {
+            
+
+                a {
+                    text-decoration: none;
+                    color: rgb(30, 30, 39);
+                    font-size: 13px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    &:hover{
+                        color: rgb(181, 174, 196);
+                      }
                 }
+                
             }
         }
-    
-        div{
+        .icons{
             display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 20px;
             a{
-                color: #1e1e27;
-                font-family: 'Poppins', sans-serif;
-             
-                i{
-                    font-size: 14px;
-                }
+                color: black;
             }
         }
     }

@@ -1,41 +1,40 @@
-footer{
-
-    .foot{
+footer {
+    padding: 20px 0;
+    .foot {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-       padding: 30px 0;
-        .foot_blog{
-            gap: 20px;
+        .foot_head {
             display: flex;
-            h3{
+            gap: 20px;
+            h5 {
                 font-size: 14px;
-                color: #51545f;
+                color: rgb(81, 84, 95);
                 line-height: 30px;
                 &:hover{
-                    color: brown;
+                    color: rgb(254, 76, 80);
                 }
             }
-        }
 
+        }
         ul{
-            list-style: none;
             display: flex;
             gap: 20px;
+            list-style: none;
             li{
                 a{
-                    color: #51545f;
+                    color: rgb(81, 84, 95);
                     &:hover{
-                        color: brown;
+                        color: rgb(254, 76, 80);
                     }
                 }
             }
         }
     }
-
-    p{
-        font-size: 14px;
-        color: #51545f;
+    p{    font-size: 14px;
+        color: rgb(81, 84, 95);
         line-height: 30px;
+        padding-top: 30px;
+
     }
- 
 }

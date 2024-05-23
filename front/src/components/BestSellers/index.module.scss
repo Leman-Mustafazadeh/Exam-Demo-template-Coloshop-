@@ -1,33 +1,62 @@
-.sec{
-    margin-top: 50px;
+#app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    // background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
     text-align: center;
-}
-
-.sellers {
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
     display: flex;
-text-align: center;
-
-    .best {
-        border-right: solid 1px #e9e9e9;
-        &:hover{
-            border: solid 1px #e9e9e9;
-            cursor: pointer;
-        }
-        h4 {
-            color: #1e1e27;
-            line-height: 20px;
-            font-size: 14px;
-        }
-
-        p {
-            color: #fe4c50;
-            font-weight: 600;
-            font-size: 14px
-            span{
-                font-size: 12px;
-                margin-left: 10px;
-                color: #b5aec4;
-                text-decoration: line-through;
-        }
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .best{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .swip{
+    text-align: center;
+    border-right: 1px solid rgb(233, 233, 233);
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     }
-}}
+ 
+    h5{
+        color: rgb(30, 30, 39);
+        line-height: 20px;
+        font-size: 14px;
+    }
+    p{
+        font-size: 16px;
+        color: rgb(254, 76, 80);
+        font-weight: 600;
+    }
+  }

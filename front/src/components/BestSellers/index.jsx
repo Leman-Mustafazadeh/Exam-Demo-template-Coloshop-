@@ -1,48 +1,43 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import { ColorContext } from '../../context/ContextShops';
 import styles from "./index.module.scss"
 const BestSellers = () => {
+  const {shops,setShops} = useContext(ColorContext)
   return (
-<section className={styles.sec}>
-    <div className="container">
+    <section className={styles.best}>
+      <div className="container">
         <h1>Best Sellers</h1>
-        <div className={styles.sellers}>
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_3.png.webp" alt="" />
-                <h4>Blue Yeti USB Microphone Blackout Edition</h4>
-                <p>$120.00</p>
-            </div>
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_1.png.webp" alt="" />
-                <h4>Fujifilm X100T 16 MP Digital Camera (Silver)</h4>
-                <p>$520.00 <span><del>$590.00</del></span></p>
-            </div>
 
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_2.png.webp" alt="" />
-                <h4>Samsung CF591 Series Curved 27-Inch FHD Monitor</h4>
-                <p>$610.00</p>
-            </div>
+        <Swiper
+        slidesPerView={5}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+       {shops.map((item)=>{
+        return(
+          <SwiperSlide className={styles.swip}> 
+          <img src={item.imgSrc} alt="" />
+            <h5>{item.name}</h5>
+            <p>${item.price}</p>
+          </SwiperSlide>
+        )
+       })}
+       
+      </Swiper>
 
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_4.png.webp" alt="" />
-                <h4>DYMO LabelWriter 450 Turbo Thermal Label Printer</h4>
-                <p>$410.00</p>
-            </div>
 
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_5.png.webp" alt="" />
-                <h4>Pryma Headphones, Rose Gold & Grey</h4>
-                <p>$180.00</p>
-            </div>
 
-            <div className={styles.best}>
-                <img src="https://preview.colorlib.com/theme/coloshop/images/product_1.png.webp" alt="" />
-                <h4>Fujifilm X100T 16 MP Digital Camera (Silver)</h4>
-                <p>$520.00 <span><del>$590.00</del></span></p>
-            </div>
-        </div>
-    </div>
-</section>
+
+      </div>
+    </section>
   )
 }
 

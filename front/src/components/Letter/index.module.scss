@@ -1,0 +1,33 @@
+.letter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h5{
+        font-size: 24px;
+        color: rgb(40, 40, 40);
+        line-height: 24px;
+    }
+    p{
+        line-height: 1.7;
+        color: rgb(81, 84, 95);
+    }
+    input{
+        padding: 5px 10px;
+        border-color: transparent;
+    }
+    button{
+        background-color: rgb(254, 76, 80);
+        border-color: transparent;
+        padding: 5px 10px;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 500;
+        &:hover{
+            background: rgb(254, 124, 127);
+        }
+    }
+}
+.letter_head{
+    background-color: rgb(242, 242, 242);
+    padding: 20px 0;
+}

@@ -1,83 +1,74 @@
+const bodyParser = require('body-parser')
 const express = require('express')
+const cors = require('cors')
 const app = express()
-var cors = require('cors')
-app.use(cors())
-const PORT = 5050
 const mongoose = require('mongoose');
-var bodyParser = require('body-parser')
+ const PORT = 3000
+app.use(cors())
 app.use(bodyParser.json())
+
+
 
 const ColorSchema = new mongoose.Schema({
     imgSrc:String,
     name:String,
     price:Number,
-    discountPrice:Number
+    discount:Number
 },{timestamps:true})
 
+const Model = mongoose.model("Color",ColorSchema)
 
-const Model= mongoose.model("ColorShop",ColorSchema)
-
-
-app.get("/color",async(req,res)=>{
-const col= await Model.find()
-try {
-    res.send({data:col})
-} catch (error) {
-    res.send({error:error})
-}
-})
-
-app.get("/color/:id",async(req,res)=>{
-const {id}=req.params
-const col= await Model.findById(id)
-try {
-    res.send({data:col})
-} catch (error) {
-    res.send({error:error})
-}
-})
-
-
-app.delete("/color/:id",async(req,res)=>{
-    const {id}=req.params
-    const col= await Model.findByIdAndDelete(id)
-    try {
-        res.send({data:col})
+app.get("/shops",async(req,res)=>{
+    const response =await Model.find()
+    try {res.send({
+        data:response
+    })
     } catch (error) {
         res.send({error:error})
     }
+})
+
+app.get("/shops/:id",async(req,res)=>{
+    const {id} = req.params
+    const response =await Model.findById(id)
+    try {res.send({
+        data:response
     })
-
-
-    app.post("/color",async(req,res)=>{
-        const col=  new Model(req.body)
-        const cols = await col.save()
-        try {
-            res.send({data:cols})
-        } catch (error) {
-            res.send({error:error})
-        }
-        })
-
-
-        app.patch("/color",async(req,res)=>{
-            const {id}=req.params
-            await Model.findByIdAndUpdate(id,req.body)
-            const col = await Model.findById(id)
-            try {
-                res.send({data:col})
-            } catch (error) {
-                res.send({error:error})
-            }
-            })
+    } catch (error) {
+        res.send({error:error})
+    }
+})
 
 
 
+app.delete("/shops/:id",async(req,res)=>{
+    const {id} = req.params
+    const response =await Model.findByIdAndDelete(id)
+    try {res.send({
+        data:response
+    })
+    } catch (error) {
+        res.send({error:error})
+    }
+})
+
+app.post("/shops",async(req,res)=>{
+    const response = new Model(req.body)
+await response.save()
+    try {res.send({
+        data:response
+    })
+    } catch (error) {
+        res.send({error:error})
+    }
+})
 
 
 
 
-mongoose.connect('mongodb+srv://laman:laman123@coloshop.glqxg6i.mongodb.net/')
+
+
+mongoose.connect('mongodb+srv://laman:laman2004@examcolor.bee8a6d.mongodb.net/')
   .then(() => console.log('Connected!'));
 app.listen(PORT, function () {
     console.log(`CORS-enabled web server listening on port ${PORT}`)

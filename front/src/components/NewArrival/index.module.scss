@@ -1,61 +1,34 @@
-.new{
-    text-align: center;
-    h2{
-        font-size: 40px;
-    }
-    .all {
-        margin: 30px 0;
-        button:first-child {
-            color: #FFFFFF;
-            background: #fe4c50;
-            padding: 5px 35px;
-    
-            &:hover {
-                background: #FE7C7F
-            }
+.sec_head {
+    background-image: url("https://preview.colorlib.com/theme/coloshop/images/slider_1.jpg.webp");
+    background-position: center;
+    height: 80vh;
+
+    .sec {
+        width: 50%;
+        padding-top: 100px;
+
+        h5 {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
         }
-    
+
+        h1 {
+            font-weight: 400;
+            font-size: 72px;
+        }
+
         button {
-            border: solid 1px #ebebeb;
             font-size: 14px;
             font-weight: 500;
-            padding: 5px 35px;
-            background: #FFFFFF;
-            border-radius: 3px;
+            color: rgb(255, 255, 255);
             text-transform: uppercase;
-    
-        }
-    }
-    
-    .datas_head{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 30px;
-        .datas{
-            width: 80%;
-            text-align: center;
-            div{            position: relative;
-}
-            img{
-                width: 60%;
-    
-                height: 90%;
-            }
-            h3{
-                color: #1e1e27;
-                line-height: 20px;
-                font-size: 14px;
-            }
-            p{
-                color: #fe4c50;
-                font-weight: 600;
-            }
-            button{
-                z-index: 300;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin-top: 300px;
+            background-color: rgb(255, 99, 71);
+            border-color: transparent;
+            padding: 5px 10px;
+
+            &:hover {
+                background: rgb(253, 224, 219);
             }
         }
     }

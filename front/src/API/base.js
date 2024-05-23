@@ -1,1 +1,1 @@
-export const BASE_URL= "http://localhost:5050/color"
+export const BASE_URL = "http://localhost:3000/shops"

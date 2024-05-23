@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import { Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
 
-const ColorShop = () => {
+const ShopRouter = () => {
   return (
     <div>
       <Header/>
@@ -13,4 +13,4 @@ const ColorShop = () => {
   )
 }
 
-export default ColorShop
+export default ShopRouter

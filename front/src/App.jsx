@@ -1,21 +1,19 @@
-
-import './App.css'
-import ColorContextProvider from './context/ColorContextProvider';
-import { ROUTES } from './routes/ROUTES'
+import { useState } from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import './App.css'
+import { ROUTES } from './routes/ROUTES'
+import ContextShops from './context/ContextShops';
 
 function App() {
+  const [count, setCount] = useState(0)
 const routesa = createBrowserRouter(ROUTES)
   return (
-   <>
-   <ColorContextProvider>
-   <RouterProvider router={routesa}/>
-
-   </ColorContextProvider>
-   </>
+  <ContextShops>
+  <RouterProvider router={routesa}/>
+  </ContextShops>
   )
 }
 
