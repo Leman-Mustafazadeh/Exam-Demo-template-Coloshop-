@@ -51,6 +51,7 @@ const {wishlist,setWishlist} = useContext(WishlistContext)
    
   }
 
+
 const handleWishlist=(text)=>{
   const target = wishlist.find((x)=>x._id==text._id)
   if(target){
@@ -62,6 +63,7 @@ const handleWishlist=(text)=>{
     localStorage.setItem("wishlist",JSON.stringify([...wishlist,text]))
   }
 }
+
 
 const [filter,setFilter] = useState(shops)
 const handleSubmit=(inpValue)=>{
@@ -105,7 +107,7 @@ const sortByPrice=(value)=>{
             filter.map((item)=>{
               return(
                <div className={styles.prod_item}>
-               <button style={{backgroundColor:'pink'}} onClick={()=>handleWishlist(item)}>{wishlist.find((x)=>x._id==item._id)? <i class="fa-regular fa-heart"></i>:<i class="fa-solid fa-heart"></i>}</button>
+               <button style={{backgroundColor:'pink'}} onClick={()=>handleWishlist(item)}>{wishlist.find((x)=>x._id==item._id)? <i class="fa-solid fa-heart"></i>:<i class="fa-regular fa-heart"></i>}</button>
                  <img src={item.imgSrc} alt="" />
                 <h5>{item.name}</h5>
                 <p>${item.price}</p>

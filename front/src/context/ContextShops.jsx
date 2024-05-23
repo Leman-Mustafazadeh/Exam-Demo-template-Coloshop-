@@ -5,10 +5,13 @@ export const BasketContext = createContext("");
 export const WishlistContext = createContext("");
 const ContextShops = ({ children }) => {
   const [shops, setShops] = useState([]);
+  const localB = JSON.parse( localStorage.getItem("basket"))
   const [basket, setBasket] = useState(
-    localStorage.getItem("basket") ? localStorage.getItem("basket") : []
+    localB ? localB: []
   );
-  const [wishlist, setWishlist] = useState(localStorage.getItem("wishlist") ? localStorage.getItem("wishlist") : []);
+  const localW = JSON.parse(localStorage.getItem("wishlist"))
+  const [wishlist, setWishlist] = useState(localW ? localW : []);
+ 
   useEffect(() => {
     getAll().then((res) => {
       setShops(res.data.data);
